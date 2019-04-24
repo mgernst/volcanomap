@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Map</title>
+
+<h1 align="center"></h1>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+        integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+
+        <style type="text/css">
+        html, body { margin: 0; padding: 0; height: 100%; }
+        #map { min-height: 100%; }
+                <style>
+                  /* Optional: adjust the values below to change the appearance of the legend */
+                  .legend {
+                      padding: 6px 8px;
+                      line-height: 18px;
+                      background: rgba(255,255,255,0.9);
+                      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                      border-radius: 5px;
+                  }
+                   /* Optional: adjust the values below to change the appearance of the legend color boxes */
+                   .legend i {
+                      width: 18px;
+                      height: 18px;
+                      float: left;
+                      margin-right: 8px;
+                      opacity: 0.7;
+                  }
+                </style>
+
+<script type="text/javascript" src="data.js"></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+          var map = L.map('map', {
+              center: [32.165175, 15.073113],
+              zoom: 2
+          });
+          L.geoJson(data).addTo(map);
+                   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+           attribution: 'Map data � OpenStreetMap contributors, CC-BY-SA, Imagery � Mapbox',
+           maxZoom: 18,
+           minZoom: 1,
+           id: 'mapbox.satellite',
+           accessToken: 'pk.eyJ1IjoibS1lcm5zdCIsImEiOiJjamxmcm5uangxMDFtM3dwaGhkOHNvenptIn0.uDyJ-MnwnMfM8W49s4qXLQ'
+         }).addTo(map);
+            var wineIcon = L.icon({
+                iconUrl: 'wine.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+	    var plantIcon = L.icon({
+                iconUrl: 'plant.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+            var beeiconIcon = L.icon({
+                iconUrl: 'beeicon.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+            var yellowpinIcon = L.icon({
+                iconUrl: 'yellowpin.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+	    });
+            var volcanoIcon = L.icon({
+                iconUrl: 'volcano.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+
+
+            });
+	    var marker1 = L.marker([46.275120, -122.217471], {icon: yellowpinIcon}).addTo(map);
+            var marker2 = L.marker([40.821732, 14.426245], {icon: volcanoIcon}).addTo(map);
+            var marker3 = L.marker([-8.246990, 117.992989], {icon: volcanoIcon}).addTo(map);
+            var marker4 = L.marker([63.629759, -19.635548], {icon: volcanoIcon}).addTo(map);
+            var marker5 = L.marker([46.201499, -122.189714], {icon: volcanoIcon}).addTo(map);
+            var marker6 = L.marker([19.022502, -98.629189], {icon: volcanoIcon}).addTo(map);
+            var marker7 = L.marker([19.471409, -155.593151], {icon: volcanoIcon}).addTo(map);
+            var marker27 = L.marker([31.590058, 130.657038], {icon: volcanoIcon}).addTo(map);
+            var marker9 = L.marker([44.412055, -110.724064], {icon: volcanoIcon}).addTo(map);
+            var marker10 = L.marker([40.851508, 14.243348], {icon: yellowpinIcon}).addTo(map);
+            var marker11 = L.marker([40.748179, 14.484241], {icon: yellowpinIcon}).addTo(map);
+            var marker12 = L.marker([46.244655, -122.131565], {icon: yellowpinIcon}).addTo(map);
+            var marker13 = L.marker([46.275306, -122.216930], {icon: yellowpinIcon}).addTo(map);
+            var marker14 = L.marker([46.283375, -122.260988], {icon: yellowpinIcon}).addTo(map);
+            var marker15 = L.marker([19.693373, -155.093370], {icon: yellowpinIcon}).addTo(map);
+            var marker16 = L.marker([19.536269, -155.576482], {icon: yellowpinIcon}).addTo(map);
+            var marker17 = L.marker([44.463648, -110.836574], {icon: yellowpinIcon}).addTo(map);
+            var marker18 = L.marker([19.042591, -98.575248], {icon: yellowpinIcon}).addTo(map);
+            var marker19 = L.marker([44.536586, -110.800118], {icon: yellowpinIcon}).addTo(map);
+            var marker20 = L.marker([63.647372, -19.141556], {icon: yellowpinIcon}).addTo(map);
+            var marker21 = L.marker([40.749677, 14.484686], {icon: yellowpinIcon}).addTo(map);
+            var marker22 = L.marker([40.853393, 14.313205], {icon: yellowpinIcon}).addTo(map);
+            var marker23 = L.marker([-8.187653, 117.639453], {icon: yellowpinIcon}).addTo(map);
+            var marker24 = L.marker([-8.350869, 117.813062], {icon: yellowpinIcon}).addTo(map);
+            var marker25 = L.marker([31.592761, 130.560129], {icon: yellowpinIcon}).addTo(map);
+	    var marker26 = L.marker([31.681402, 130.606563], {icon: yellowpinIcon}).addTo(map);
+            var marker8 = L.marker([31.501201, 130.510476], {icon: yellowpinIcon}).addTo(map);
+	    var marker28 = L.marker([23.1573176,-82.2835371], {icon: plantIcon}).addTo(map);
+	    var marker29 = L.marker([22.8438648,-82.9448861], {icon: plantIcon}).addTo(map);
+            var pic5 = '<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/MSH80_st_helens_eruption_plume_07-22-80.jpg" alt="Sunwahduck" width="300">';
+            var pic2 = '<img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Vesuvius_from_plane.jpg" width="300">';
+            var pic3 = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Caldera_Mt_Tambora_Sumbawa_Indonesia.jpg" width="300">';
+            var pic4 = '<img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Eyjafjallaj%C3%B6kul%2C_17_april_2010.jpg" width="300">';
+            var pic1 = '<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/MSH80_david_johnston_at_camp_05-17-80_med_%28cropped%29.jpg" alt="Fourbelly2" width="300">';
+            var pic6 = '<img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Popocat%C3%A9petl_fumarola.jpg" alt="Overeasy" width="300">';
+            var pic7 = '<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Mauna_Loa_from_the_air.jpg" width="300">';
+            var pic27 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Sunset_sakurajima.jpg" width="300">';
+            var pic9 = '<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Yellowstone_Caldera.svg" alt="Krungthep" width="300">';
+            var pic10 = '<img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Vesuvius1822scrope.jpg" alt="Elhabanero" width="300">';
+	    var pic11 = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Pompeii_Garden_of_the_Fugitives_02.jpg" alt="Sunwahduck" width="300">';
+            var pic12 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Mount_St_Helens_1985c.jpg" alt="Hellosushi" width="300">';
+            var pic13 = '<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/From_Johnston_Ridge_Observatory_October_2004_11.JPG" width="300">';
+            var pic14 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Car_Caught_in_the_1980_Eruption_%284100915027%29.jpg" width="300">';
+            var pic15 = '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Hilo.jpg" alt="Fourbelly2" width="300">';
+            var pic16 = '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/2017-MaunaLoaObservatory.jpg" alt="Sunwahduck" width="300">';
+            var pic17 = '<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Yellowstone_Castle_Geysir_Edit.jpg" alt="Revolution3452" width="300">';
+            var pic18 = '<img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Exhalaci%C3%B3n_del_Popocat%C3%A9petl_al_atardecer_02.JPG" alt="Amistad2" width="300">';
+            var pic19 = '<img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Great_Fountain_Geyser_Sunset.jpg" alt="Krungthep" width="300">';
+            var pic20 = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Katla_1918.jpg" alt="Elhabanero" width="300">';
+            var pic21 = '<img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Vesubio_desde_Pompeya.jpg" alt="Sunwahduck" width="300">';
+            var pic22 = '<img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Spaccanapoli_da_s_Elmo_1050131.JPG" alt="Hellosushi" width="300">';
+            var pic23 = '<img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Tambora_ashfall_1815.svg" alt="Hopleaf654" width="300">';
+            var pic24 = '<img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/FMIB_50001_Eruption_of_Tomboro_in_1821.jpeg" alt="New_York_Pizza_Slices" width="300">';
+            var pic25 = '<img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Kagoshima_and_Sakurajima.jpg" alt="Fourbelly2" width="300">';
+            var pic26 = '<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/The_Famous_Scenes_of_the_Sixty_States_66_Osumi.jpg" alt="Elhabanero" width="300">';
+            var pic8 = '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Sakurajima_20091003.jpg" alt="Sunwahduck" width="300">';
+            var pic28 = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/AJM_013_Vivero_Alamar.JPG" alt="Hellosushi" width="300">';
+            var pic29 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/60/LasTerrazas.jpg" alt="Hopleaf654" width="300">';
+            marker5.bindPopup('<p style="color:black; font-weight:bold"> Mount St. Helens - Washington, U.S. - May 18, 1980 </p> Following several weeks of monitored seismic activity, on the morning of May 18, a 5.1 magnitude earthquake caused a landslide on the North side of the mountain. This movement allowed for superheated gas and magma to escape at supersonic speeds. The initial blast destroyed everything within 8 miles nearly instantaneously and caused trees up to 19 miles away in the blast zone to snap and lay down pointed perfectly North. The following eruption of magma and volcanic ash spewed 12 miles into the sky and ash settled as far as 2,200 miles away. The spewing ash and magma also created devastating lahars that ended up damaging property and claiming lives, making it the most destructive eruption in U.S. History. In total, the eruption caused the death of 57 people. </p>' + pic5);
+            marker2.bindPopup('<p style="color:black; font-weight:bold"> Mount Vesuvius - Metropolitan City of Naples - Italy </p> The only active volcano on mainland Europe, Mt. Vesuvius has had 8 major eruptions spanning the last 17,000 years. One of the most famous of these eruptions occurred in 79 AD. This eruption englulfed the town of Pompeii, causing nearly 16,000 people to die, consumed by the volcanic ash. The volcanic material entombed and preserved many of the people and their belongings in fine detail. </p>' + pic2);
+            marker3.bindPopup('<p style="color:black; font-weight:bold"> Mount Tambora - Indonesia - April 5, 1815 </p> The eruption in 1815 began with slight tremors and some lava flow, but 5 days later on April 10, a massive eruption exploded, marking the largest volcanic eruption in recorded history. The blast, ash and lava flow, and subsequent tsunamis killed 10,000 islanders and destroyed nearly 35,000 homes. Emitting nearly 35 cubic miles of volcanic material, along with 60 megatons of sulfur into the atmosphere, the material blocked enough sunlight to reduce the global temperature by 3 degrees. Nearly 80,000 people died as a result of being unable to grow crops. In 1816, in North America and Europe, heavy snow and frost came as a result and led to starvation. It became known as: The year without a summer. </p>' + pic3);
+            marker4.bindPopup('<p style="color:black; font-weight:bold"> Eyjafjallajökull - Iceland - April 14, 2010 </p> Eruptions from this volcano have been documented as far back as 920 AD, and in 1821 an eruption began that did not stop for 14 months. In 2010, the eruption began without much explosivity, but after several days began spewing volcanic material at a rate of 750 tons per second, sending steam and ash 7 miles into the sky. Southeasterly winds carried the ash plume over many European countries, causing air travel to come to a halt for nearly a week, and intermittently for the following weeks. It is estimated 95,000 flights were grounded, causing a loss of $1.7 Billion to the airline industry. </p>' + pic4);
+            marker1.bindPopup('<p style="color:black; font-weight:bold"> Johnston Ridge Observatory </p> Named after USGS volcanologist David Johnston, the observatory is now a popular tourist destination and viewing center of the cratered face of the mountain. David Johnston was monitoring seismic activity on the morning of the 1980 eruption, and heroically stayed in place to continue observations and relay information via radio in order to give early warning to local residents. </p>' + pic1);
+            marker6.bindPopup('<p style="color:black; font-weight:bold"> Volcán Popocatépetl - Puebla, Mexico </p> Located roughly 40 miles Southeast of Mexico City, this active volcano has frequent explosive eruptions, causing disruption to air-traffic to and from Mexico City as recently as 2013. Aztec culture had documented the volcanic activity, and the Spaniards established monestaries on the volcano slopes which are now a World Heritage Site. </p>' + pic6);
+            marker7.bindPopup('<p style="color:black; font-weight:bold"> Mauna Loa - Hawaii, U.S. </p> At over 13,000 Ft above sea level, this is the largest active volacono on the planet. Having erupted 33 times since monitoring began in 1843, the eruptions are characterized by basaltic magma flows that are significant in volume. In 1984, during the last eruption, the magma flow reached to within under 5 miles of the most populous area of the island, Hilo. </p>' + pic7);
+            marker27.bindPopup('<p style="color:black; font-weight:bold"> Sakurajima Volcano - Japan </p> Mount Sakurajima is considered one of the most active volcanoes in the world. It experiences eruptive activite, including ash explosions, every 4 to 24 hours. The most notable eruptions occurred in 1471-1476 and 1914. The latter eruption caused no deaths, as earthquakes prior alerted residents to the danger and they were able to evacuate before the eruption. The volcano is actively monitored for signs of another large eruption. </p>' + pic8);
+            marker9.bindPopup('<p style="color:black; font-weight:bold"> Yellowstone Caldera - Wyoming, U.S. </p> Due to the massive amount of volcanic material and activity in Yellowstone, much of the park itself is actually considered a Supervolcano. Its three eruptions - 2.1 Million years ago, 1.2 Million years ago, and 640,000 years ago - are estimated to have been 6,000, 700, and 2,500 times bigger than the 1980 eruption of Mount St. Helens. </p>' + pic9);
+            marker10.bindPopup('<p style="color:black; font-weight:bold"> Naples, Italy </p.> The Eruption of Vesuvius as seen from Naples, October 1822, by G. Julius Poullet Scrope </p>' + pic10);
+            marker11.bindPopup('<p style="color:black; font-weight:bold"> Pompeii - Italy </p> The casts of the corpses of a group of human victim of the 79 AD eruption of the Vesuvius, found in the so-called “Garden of the fugitives” in Pompeii. </p>' + pic11);
+            marker12.bindPopup('<p style="color:black; font-weight:bold"> Downed trees near Mount St. Helens </p> Area surrounding Mount St. Helens Washington, United States in 1985. These trees are part of the 19 mile tree-down zone in which many trees were laid flat by the initial blast of the eruption. </p>' + pic12);
+            marker13.bindPopup('<p style="color:black; font-weight:bold"> Johnston Ridge Observatory </p> View of Mount St. Helens from the Johnston Ridge Observatory during mild volcanic activity in 2005 </p>' + pic13);
+            marker14.bindPopup('<p style="color:black; font-weight:bold"> Spirit Lake Highway </p> A car destroyed by the plume of erupting volcanic ash. </p>' + pic14);
+            marker15.bindPopup('<p style="color:black; font-weight:bold"> Hilo, HI </p> One of the most populous and most threatened areas of the island due to its proximity to Mauna Loa. </p>' + pic15);
+            marker16.bindPopup('<p style="color:black; font-weight:bold"> Mauna Loa Observatory </p>' + pic16);
+            marker17.bindPopup('<p style="color:black; font-weight:bold"> Castle Geyser - Yellowstone National Park </p> The park contains many hot springs and geysers, indicating the active volcanic presence very near the surface. </p>' + pic17);
+            marker18.bindPopup('<p style="color:black; font-weight:bold"> View of Volcán Popocatépetl emitting smoke </p>' + pic18);
+            marker19.bindPopup('<p style="color:black; font-weight:bold"> Great Fountain Geyser - Yellowstone National Park </p>' + pic19);
+            marker20.bindPopup('<p style="color:black; font-weight:bold"> Katla - Iceland </p> The Katla volcano has been documented to erupt nearly simultaneously with the eruptions of Eyjafjallajökull (Picture taken in 1918) </p>' + pic20);
+            marker21.bindPopup('<p style="color:black; font-weight:bold"> Ruins of Pompeii - Original Site </p> View of Mt. Vesuvius </p>' + pic21);
+            marker22.bindPopup('<p style="color:black; font-weight:bold"> Naples - Italy </p> The modern city of Naples has roughly 1 million residents, with over 3 million living within the provincial municipality. Its proximty to Mt. Vesuvius makes it one of the most imperiled modern urban areas in the case of another major eruption. </p>' + pic22);
+            marker23.bindPopup('<p style="color:black; font-weight:bold"> Ash Fall Following the 1815 eruption </p>' + pic23);
+            marker24.bindPopup('<p style="color:black; font-weight:bold"> Sketch of Tombora erupting </p>' + pic24);
+            marker25.bindPopup('<p style="color:black; font-weight:bold"> Kagoshima - Japan </p> The city of Kagoshima is home to nearly a half million people. Its proximity to Sakurajima makes it a potentially endangered area in the event of a large eruption. </p>' + pic25);
+            marker26.bindPopup('<p style="color:black; font-weight:bold"> Artistic rendering of Sakurajima </p>' + pic26);
+            marker8.bindPopup('<p style="color:black; font-weight:bold"> Eruption of Sakurajima in 2009 </p>' + pic27);
+            marker28.bindPopup('<p style="color:black; font-weight:bold"> Vivero Alamar - Havana - Cuba </p> This remains one of the most productive organoponico urban farms in Cuba. </p>' + pic28);
+            marker29.bindPopup('<p style="color:black; font-weight:bold"> Tito Nunez - Las Terrazas - Cuba </p> CLOSED </p>' + pic29);
+        </script>
+
+   </body>
+</html>
